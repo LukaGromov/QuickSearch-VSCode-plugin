@@ -1,0 +1,50 @@
+{
+    "name": "simple-quick-search",
+    "displayName": "Simple Quick Search",
+    "description": "Quick search selected text on Stack Overflow",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "simple-quick-search.stackoverflow",
+                "title": "Search on Stack Overflow"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "simple-quick-search.stackoverflow",
+                "key": "cmd+shift+s",
+                "mac": "cmd+shift+s"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.60.0",
+        "typescript": "^4.3.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/LukaGromov/QuickSearch-VSCode-plugin.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/LukaGromov/QuickSearch-VSCode-plugin/issues"
+    },
+    "homepage": "https://github.com/LukaGromov/QuickSearch-VSCode-plugin#readme"
+}
