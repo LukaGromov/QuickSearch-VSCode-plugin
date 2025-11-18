@@ -1,25 +1,47 @@
 # Simple Quick Search
 
-VS Code extension for quick searching selected text on StackOverflow.
+## Общее описание решения
 
-## Features
+Это расширение для VS Code предоставляет возможность быстро искать выделенный текст на Stack Overflow. При выделении текста в редакторе и нажатии горячей клавиши расширение откроет браузер с результатами поиска на Stack Overflow.
 
-- Select any text in editor
-- Press `Ctrl+Shift+S` (or `Cmd+Shift+S` on Mac)
-- Automatically opens Stack Overflow with your search query
+Расширение реализовано на TypeScript и состоит из одного модуля:
+- `extension.ts` - основной файл, содержащий логику расширения
 
-## Installation
+## Описание функций
 
-1. Clone this repository
-2. Run `npm install`
-3. Press `F5` to test in Extension Development Host (if youre on mac, you must have "Use F1, F2, etc. keys as standart function keys" option turned on)
+### Модуль extension.ts
 
-## Usage
+#### activate(context)
+Функция, которая вызывается при активации расширения. Регистрирует команду `simple-quick-search.stackoverflow` в VS Code.
 
-1. Select text in VS Code editor
-2. Use keyboard shortcut `Ctrl+Shift+S`
-3. Or use Command Palette: `Search on Stack Overflow`
+**Параметры:**
+- context (vscode.ExtensionContext) - контекст расширения, предоставляемый VS Code
 
-## Author
+**Возвращает:**
+- void
 
-Gromov Luka - M3105 (SE '29)
+#### deactivate()
+Функция, которая вызывается при деактивации расширения. В текущей реализации не выполняет действий.
+
+**Возвращает:**
+- void
+
+#### Команда 'simple-quick-search.stackoverflow'
+Выполняет поиск выделенного текста на Stack Overflow.
+
+**Логика работы:**
+1. Проверяет наличие активного редактора.
+2. Проверяет, есть ли выделенный текст.
+3. Если текст выделен, кодирует его для URL и открывает браузер с ссылкой на поиск по Stack Overflow.
+4. Показывает информационное сообщение о выполнении поиска.
+
+**Пример использования:**
+1. Выделите текст в редакторе VS Code.
+2. Нажмите `Ctrl+Shift+S` (или `Cmd+Shift+S` на Mac).
+3. Расширение откроет браузер с результатами поиска на Stack Overflow.
+
+## История изменений
+* 6ba4b3d L-03: Initial commit
+
+## Автор
+Громов Лука Андреевич - М3105
